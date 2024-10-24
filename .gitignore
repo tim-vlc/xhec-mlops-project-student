@@ -85,3 +85,6 @@ secrets/*
 
 # Mac files
 .DS_Store
+
+# ML run output files
+*mlruns
