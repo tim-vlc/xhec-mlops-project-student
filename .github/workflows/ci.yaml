@@ -26,7 +26,11 @@ jobs:
           pip install -r requirements.txt
           pip install -r requirements-dev.txt
 
+      - name: Format code with black
+        run: |
+          black .
+
       - name: Test code quality
         run: |
           # Run linters
-          flake8 .  # Lint the code
+          flake8 . --max-line-length=130 # Lint the code
