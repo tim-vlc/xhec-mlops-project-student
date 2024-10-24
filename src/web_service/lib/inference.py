@@ -2,11 +2,12 @@ from typing import List
 import pandas as pd
 from sklearn.base import BaseEstimator
 from sklearn.preprocessing import OneHotEncoder
-from app_config import CATEGORICAL_COLS, NUMERICAL_COLS
+
+from src.web_service.app_config import CATEGORICAL_COLS, NUMERICAL_COLS
+from src.web_service.lib.models import InputData
+
 from loguru import logger
 import numpy as np
-
-from lib.models import InputData
 
 
 def preprocess_X(df: pd.DataFrame, encoder: OneHotEncoder):

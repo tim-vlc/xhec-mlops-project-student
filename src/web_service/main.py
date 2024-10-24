@@ -1,12 +1,11 @@
 import os
 import uvicorn
-from lib.models import PredictionResponse
-from lib.models import InputData
-from utils import load_object
-from lib.inference import run_inference
-from app_config import MODELS_DIRPATH
+from src.web_service.lib.models import PredictionResponse
+from src.web_service.lib.models import InputData
+from src.web_service.utils import load_object
+from src.web_service.lib.inference import run_inference
+from src.web_service.app_config import MODELS_DIRPATH, APP_DESCRIPTION, APP_TITLE, APP_VERSION
 
-from app_config import APP_DESCRIPTION, APP_TITLE, APP_VERSION
 from fastapi import FastAPI
 
 app = FastAPI(title=APP_TITLE, description=APP_DESCRIPTION, version=APP_VERSION)
