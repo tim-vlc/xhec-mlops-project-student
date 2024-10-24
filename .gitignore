@@ -87,4 +87,4 @@ secrets/*
 .DS_Store
 
 # ML run output files
-*mlruns
+mlruns/*

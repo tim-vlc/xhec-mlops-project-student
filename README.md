@@ -142,3 +142,19 @@ This will guarantee that your code is formatted correctly and of good quality be
 ```bash
 pip-compile requirements.in
 ```
+
+### Run the code
+
+To run the code in the terminal, use the following command:
+
+```bash
+python src/modelling/main.py "data/abalone.csv"
+```
+
+To access the Prefect dashboard, start the server by running the following command in the terminal:
+
+```bash
+prefect server start
+```
+
+Copy the HTTP link provided and paste it into your browser to access the dashboard.

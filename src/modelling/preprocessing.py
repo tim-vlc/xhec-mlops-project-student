@@ -1,7 +1,9 @@
-import pandas as pd
 from sklearn.preprocessing import OneHotEncoder
+from prefect import task
+import pandas as pd
 
 
+@task
 def preprocess_data(df, numerical_cols, categorical_cols, target_col):
     encoder = OneHotEncoder(drop="first", sparse_output=False)
     encoded_categorical = encoder.fit_transform(df[categorical_cols])
