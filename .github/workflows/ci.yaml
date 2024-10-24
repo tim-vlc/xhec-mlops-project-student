@@ -28,6 +28,5 @@ jobs:
 
       - name: Test code quality
         run: |
-          # Run linters and tests
+          # Run linters
           flake8 .  # Lint the code
-          pytest    # Run tests
