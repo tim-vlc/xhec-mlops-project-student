@@ -1,0 +1,8 @@
+# TODO - complete with dev requirements (black, flake8, ruff, etc...)
+# Then, execute "pip-compile requirements-dev.in" to generate the file requirements-dev.txt
+black==23.9.1               # Code formatter
+flake8==6.1.0               # Linting
+pytest==7.4.2               # Testing framework
+pytest-cov==4.1.0           # Test coverage
+mypy==1.5.1                 # Type checking
+docker==6.1.3
