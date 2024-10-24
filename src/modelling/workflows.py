@@ -3,14 +3,14 @@ from typing import Optional
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from helpers import save_pickle
+from src.modelling.helpers import save_pickle
 from loguru import logger
 
 
 from prefect import flow
-from preprocessing import preprocess_data
-from config import NUMERICAL_COLS, CATEGORICAL_COLS, TARGET_COLS
-from modeling import train_model, predict, evaluate_model
+from src.modelling.preprocessing import preprocess_data
+from src.modelling.config import NUMERICAL_COLS, CATEGORICAL_COLS, TARGET_COLS
+from src.modelling.modeling import train_model, predict, evaluate_model
 
 
 @flow(name="Train model")

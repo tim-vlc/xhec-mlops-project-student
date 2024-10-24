@@ -4,7 +4,12 @@ from src.web_service.lib.models import PredictionResponse
 from src.web_service.lib.models import InputData
 from src.web_service.utils import load_object
 from src.web_service.lib.inference import run_inference
-from src.web_service.app_config import MODELS_DIRPATH, APP_DESCRIPTION, APP_TITLE, APP_VERSION
+from src.web_service.app_config import (
+    MODELS_DIRPATH,
+    APP_DESCRIPTION,
+    APP_TITLE,
+    APP_VERSION,
+)
 
 from fastapi import FastAPI
 
