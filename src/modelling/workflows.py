@@ -44,6 +44,7 @@ def train_model_workflow(
 
     return {"model": model, "rmse": rmse}
 
+
 if __name__ == "__main__":
     from config import DATA_DIRPATH, MODELS_DIRPATH
 
