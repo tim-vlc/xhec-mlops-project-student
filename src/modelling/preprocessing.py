@@ -14,4 +14,4 @@ def preprocess_data(df, numerical_cols, categorical_cols, target_col):
     X = pd.concat([df[numerical_cols], encoded_df], axis=1)
     y = df[target_col]
 
-    return X, y
+    return X, y, encoder

@@ -24,7 +24,7 @@ def train_model_workflow(
     df = pd.read_csv(filepath)
 
     logger.info("Processing data...")
-    X, y = preprocess_data(df, NUMERICAL_COLS, CATEGORICAL_COLS, TARGET_COLS)
+    X, y, encoder = preprocess_data(df, NUMERICAL_COLS, CATEGORICAL_COLS, TARGET_COLS)
 
     logger.info("Splitting train and test data...")
     X_train, X_test, y_train, y_test = train_test_split(
@@ -41,8 +41,9 @@ def train_model_workflow(
     if artifacts_filepath is not None:
         logger.info(f"Saving artifacts to {artifacts_filepath}...")
         save_pickle(os.path.join(artifacts_filepath, "model.pkl"), model)
+        save_pickle(os.path.join(artifacts_filepath, "encoder.pkl"), encoder)
 
-    return {"model": model, "rmse": rmse}
+    return {"model": model, "encoder": encoder, "rmse": rmse}
 
 
 if __name__ == "__main__":
