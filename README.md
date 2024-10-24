@@ -143,18 +143,54 @@ This will guarantee that your code is formatted correctly and of good quality be
 pip-compile requirements.in
 ```
 
-### Run the code
+## RUN THE CODE
 
-To run the code in the terminal, use the following command:
+Here are the steps to follow to correctly run the code in this project:
 
-```bash
-python src/modelling/main.py "data/abalone.csv"
+1. Clone the repository:
+```
+git clone https://github.com/tim-vlc/xhec-mlops-project-student.git
 ```
 
-To access the Prefect dashboard, start the server by running the following command in the terminal:
-
-```bash
-prefect server start
+2. Go in the directory and run the dockerfile:
+```
+cd xhec-mlops-project-student && docker build -f Dockerfile.app -t huitres . 
 ```
 
-Copy the HTTP link provided and paste it into your browser to access the dashboard.
+3. Build the docker image:
+```
+docker build -f Dockerfile.app -t huitres .
+```
+
+4. Build your conda environment:
+```
+conda env create -f environment.yml 
+conda activate project_mlops
+```
+
+5. Compile the requirements:
+```
+pip-compile environment.in
+pip-compile environment-dev.in
+```
+
+6. Install the requirements:
+```
+pip install -r requirements.txt
+pip install -r requirements-dev.txt
+```
+
+7. (Optional, if you want to update the Linear Regression model in real time) Run the `main.py` file from the `src/modelling/` folder to retrain the model:
+```
+python src/modelling/main.py
+```
+In another terminal:
+```
+prefect deployment run "Train model/Model Training Deployment"
+```
+
+(Otherwise, it retrains automatically every Sunday.)
+
+8. Go test the API at [this adress](http://localhost:8001/docs#/default/predict_predict_post): `http://localhost:8001/docs#/default/predict_predict_post`. Enjoy!
+
+9. You can also monitor the models at [this adress](http://localhost:4201/dashboard?flow-run-state=cancelled): `http://localhost:4201/dashboard?flow-run-state=cancelled`!
