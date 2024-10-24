@@ -11,7 +11,7 @@ class InputData(BaseModel):
     Shucked_weight: float
     Viscera_weight: float
     Shell_weight: float
-    Sex: Literal["M"] | Literal["F"] | Literal["I"]
+    Sex: str
 
 # Define response model
 class PredictionResponse(BaseModel):
