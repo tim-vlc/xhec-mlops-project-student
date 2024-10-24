@@ -12,10 +12,17 @@ def main(trainset_path: Path) -> None:
     """Train a model using the data at the given path and save the model (pickle)."""
     # Read data
     df = pd.read_csv(trainset_path)
-    numerical_cols = ['Length', 'Diameter', 'Height', 'Whole weight', 'Shucked weight',
-                      'Viscera weight', 'Shell weight']
-    categorical_cols = ['Sex']
-    target_col = ['Rings']
+    numerical_cols = [
+        "Length",
+        "Diameter",
+        "Height",
+        "Whole weight",
+        "Shucked weight",
+        "Viscera weight",
+        "Shell weight",
+    ]
+    categorical_cols = ["Sex"]
+    target_col = ["Rings"]
     # Preprocess data
     X, y = preprocess_data(df, numerical_cols, categorical_cols, target_col)
     # (Optional) Pickle encoder if need be
@@ -28,8 +35,8 @@ def main(trainset_path: Path) -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Train a model using the data at the given path.")
-    parser.add_argument("trainset_path", type=str,
-                        help="Path to the training set")
+        description="Train a model using the data at the given path."
+    )
+    parser.add_argument("trainset_path", type=str, help="Path to the training set")
     args = parser.parse_args()
     main(args.trainset_path)

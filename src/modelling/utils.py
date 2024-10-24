@@ -4,12 +4,11 @@ import os
 
 
 def pickle_object(model):
-
-    model_directory = 'src/web_service/local_objects'
+    model_directory = "src/web_service/local_objects"
     # Create the directory if it doesn't exist
     os.makedirs(model_directory, exist_ok=True)
-    model_path = os.path.join(model_directory, 'model.pkl')
+    model_path = os.path.join(model_directory, "model.pkl")
 
     # Save the model to a .pkl file
-    with open(model_path, 'wb') as f:
+    with open(model_path, "wb") as f:
         pickle.dump(model, f)
