@@ -16,11 +16,6 @@ repos:
         language: python
         types_or: [python, pyi, jupyter]
         additional_dependencies: [".[jupyter]"]
-      - id: isort
-        name: Sorting imports (isort)
-        entry: isort
-        types: [python]
-        language: system
       - id: flake8
         name: Linting (flake8)
         entry: flake8
