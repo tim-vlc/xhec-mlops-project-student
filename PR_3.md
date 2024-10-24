@@ -17,7 +17,7 @@ Files to be modified: the `src/modelling` folder
 
 - [ ] Don't forget to update the `requirements.in` and `requirements-dev.in` files with the new dependencies (and compile them)
 - [ ] Don't forget to update the `README.md` file with the new steps to reproduce to run the code
-- [ ] You should among other add instructions to run the prefect UI and visualize the flow runs
+- [ ] You should among others add instructions to run the prefect UI and visualize the flow runs
 
 ___
 
