@@ -1,8 +1,10 @@
 # Use this module to code a `pickle_object` function. This will be useful to pickle the model (and encoder if need be).
 import pickle
 import os
+from prefect import task
 
 
+@task
 def pickle_object(model):
     model_directory = "src/web_service/local_objects"
     # Create the directory if it doesn't exist

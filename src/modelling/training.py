@@ -3,8 +3,10 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import root_mean_squared_error, r2_score
 import mlflow
 import mlflow.sklearn
+from prefect import task
 
 
+@task
 def train(X, y, numerical_cols, categorical_cols):
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=42
