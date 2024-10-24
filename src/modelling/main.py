@@ -2,8 +2,8 @@
 import os
 
 from prefect import serve
-from src.modelling.config import DATA_DIRPATH, MODELS_DIRPATH
-from src.modelling.workflows import train_model_workflow
+from config import DATA_DIRPATH, MODELS_DIRPATH
+from workflows import train_model_workflow
 
 if __name__ == "__main__":
     train_model_deployment = train_model_workflow.to_deployment(
