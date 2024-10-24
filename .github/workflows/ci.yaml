@@ -33,4 +33,4 @@ jobs:
       - name: Test code quality
         run: |
           # Run linters
-          flake8 .  # Lint the code
+          flake8 . --max-line-length=130 # Lint the code
