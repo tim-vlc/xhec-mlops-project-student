@@ -9,3 +9,5 @@ tabulate
 matplotlib
 seaborn
 scipy
+scikit-learn
+mlflow
