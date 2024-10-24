@@ -152,14 +152,14 @@ Here are the steps to follow to correctly run the code in this project:
 git clone https://github.com/tim-vlc/xhec-mlops-project-student.git
 ```
 
-2. Go in the directory and run the dockerfile:
+2. Go in the directory and build the dockerfile:
 ```
 cd xhec-mlops-project-student && docker build -f Dockerfile.app -t huitres . 
 ```
 
-3. Build the docker image:
+3. Run the docker image:
 ```
-docker build -f Dockerfile.app -t huitres .
+docker run -d -p 8001:8001 -p 4002:4002 huitres
 ```
 
 4. Build your conda environment:
