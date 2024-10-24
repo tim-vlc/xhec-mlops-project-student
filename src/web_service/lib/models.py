@@ -1,6 +1,6 @@
 # Pydantic models for the web service
-from typing import Literal
 from pydantic import BaseModel
+
 
 # Define request model
 class InputData(BaseModel):
@@ -12,6 +12,7 @@ class InputData(BaseModel):
     Viscera_weight: float
     Shell_weight: float
     Sex: str
+
 
 # Define response model
 class PredictionResponse(BaseModel):
