@@ -4,55 +4,104 @@
 #
 #    pip-compile requirements.in
 #
+aiosqlite==0.20.0
+    # via prefect
 alembic==1.13.3
-    # via mlflow
+    # via
+    #   mlflow
+    #   prefect
 annotated-types==0.7.0
     # via pydantic
 anyio==3.7.1
     # via
     #   fastapi
+    #   httpx
+    #   prefect
     #   starlette
+apprise==1.9.0
+    # via prefect
+asgi-lifespan==2.1.0
+    # via prefect
+asyncpg==0.30.0
+    # via prefect
+attrs==24.2.0
+    # via
+    #   jsonschema
+    #   referencing
 blinker==1.8.2
     # via flask
 cachetools==5.5.0
     # via
     #   google-auth
     #   mlflow-skinny
+    #   prefect
 certifi==2024.8.30
-    # via requests
+    # via
+    #   apprise
+    #   httpcore
+    #   httpx
+    #   kubernetes
+    #   requests
+cffi==1.17.1
+    # via cryptography
 charset-normalizer==3.4.0
     # via requests
 click==8.1.7
     # via
+    #   apprise
     #   flask
     #   mlflow-skinny
+    #   prefect
+    #   typer
     #   uvicorn
 cloudpickle==3.1.0
-    # via mlflow-skinny
+    # via
+    #   mlflow-skinny
+    #   prefect
+colorama==0.4.6
+    # via griffe
 contourpy==1.3.0
     # via matplotlib
+coolname==2.2.0
+    # via prefect
+croniter==2.0.7
+    # via prefect
+cryptography==43.0.3
+    # via prefect
 cycler==0.12.1
     # via matplotlib
 databricks-sdk==0.36.0
     # via mlflow-skinny
+dateparser==1.2.0
+    # via prefect
 deprecated==1.2.14
     # via
     #   opentelemetry-api
     #   opentelemetry-semantic-conventions
+dnspython==2.7.0
+    # via email-validator
 docker==7.1.0
-    # via mlflow
+    # via
+    #   mlflow
+    #   prefect
+email-validator==2.2.0
+    # via pydantic
 fastapi==0.103.2
     # via -r requirements.in
 flask==3.0.3
     # via mlflow
 fonttools==4.54.1
     # via matplotlib
+fsspec==2024.10.0
+    # via prefect
 gitdb==4.0.11
     # via gitpython
 gitpython==3.1.43
     # via mlflow-skinny
 google-auth==2.35.0
-    # via databricks-sdk
+    # via
+    #   databricks-sdk
+    #   kubernetes
 graphene==3.4
     # via mlflow
 graphql-core==3.2.5
@@ -61,36 +110,84 @@ graphql-core==3.2.5
     #   graphql-relay
 graphql-relay==3.2.0
     # via graphene
+graphviz==0.20.3
+    # via prefect
+greenlet==3.1.1
+    # via sqlalchemy
+griffe==0.47.0
+    # via prefect
 gunicorn==23.0.0
     # via mlflow
 h11==0.14.0
-    # via uvicorn
+    # via
+    #   httpcore
+    #   uvicorn
+h2==4.1.0
+    # via httpx
+hpack==4.0.0
+    # via h2
+httpcore==1.0.6
+    # via
+    #   httpx
+    #   prefect
+httpx[http2]==0.27.2
+    # via prefect
+humanize==4.11.0
+    # via
+    #   jinja2-humanize-extension
+    #   prefect
+hyperframe==6.0.1
+    # via h2
 idna==3.10
     # via
     #   anyio
+    #   email-validator
+    #   httpx
     #   requests
 importlib-metadata==8.4.0
     # via
     #   mlflow-skinny
     #   opentelemetry-api
+importlib-resources==6.1.3
+    # via prefect
 itsdangerous==2.2.0
-    # via flask
+    # via
+    #   flask
+    #   prefect
 jinja2==3.1.4
     # via
     #   flask
+    #   jinja2-humanize-extension
     #   mlflow
+    #   prefect
+jinja2-humanize-extension==0.4.0
+    # via prefect
 joblib==1.4.2
     # via scikit-learn
+jsonpatch==1.33
+    # via prefect
+jsonpointer==3.0.0
+    # via jsonpatch
+jsonschema==4.23.0
+    # via prefect
+jsonschema-specifications==2024.10.1
+    # via jsonschema
 kagglehub==0.3.3
     # via -r requirements.in
 kiwisolver==1.4.7
     # via matplotlib
+kubernetes==29.0.0
+    # via prefect
 loguru==0.7.2
     # via -r requirements.in
 mako==1.3.6
     # via alembic
 markdown==3.7
-    # via mlflow
+    # via
+    #   apprise
+    #   mlflow
+markdown-it-py==3.0.0
+    # via rich
 markupsafe==3.0.2
     # via
     #   jinja2
@@ -101,6 +198,8 @@ matplotlib==3.9.2
     #   -r requirements.in
     #   mlflow
     #   seaborn
+mdurl==0.1.2
+    # via markdown-it-py
 mlflow==2.17.0
     # via -r requirements.in
 mlflow-skinny==2.17.0
@@ -115,6 +214,10 @@ numpy==1.26.4
     #   scikit-learn
     #   scipy
     #   seaborn
+oauthlib==3.2.2
+    # via
+    #   kubernetes
+    #   requests-oauthlib
 opentelemetry-api==1.27.0
     # via
     #   mlflow-skinny
@@ -124,19 +227,28 @@ opentelemetry-sdk==1.27.0
     # via mlflow-skinny
 opentelemetry-semantic-conventions==0.48b0
     # via opentelemetry-sdk
+orjson==3.10.10
+    # via prefect
 packaging==24.1
     # via
     #   gunicorn
     #   kagglehub
     #   matplotlib
     #   mlflow-skinny
+    #   prefect
 pandas==2.1.1
     # via
     #   -r requirements.in
     #   mlflow
     #   seaborn
+pathspec==0.12.1
+    # via prefect
+pendulum==3.0.0
+    # via prefect
 pillow==11.0.0
     # via matplotlib
+prefect==2.19.9
+    # via -r requirements.in
 protobuf==5.28.3
     # via mlflow-skinny
 pyarrow==17.0.0
@@ -147,28 +259,83 @@ pyasn1==0.6.1
     #   rsa
 pyasn1-modules==0.4.1
     # via google-auth
-pydantic==2.9.2
-    # via fastapi
+pycparser==2.22
+    # via cffi
+pydantic[email]==2.9.2
+    # via
+    #   fastapi
+    #   prefect
 pydantic-core==2.23.4
-    # via pydantic
+    # via
+    #   prefect
+    #   pydantic
+pygments==2.18.0
+    # via rich
 pyparsing==3.2.0
     # via matplotlib
 python-dateutil==2.9.0.post0
     # via
+    #   croniter
+    #   dateparser
+    #   kubernetes
     #   matplotlib
     #   pandas
+    #   pendulum
+    #   prefect
+    #   time-machine
+python-multipart==0.0.12
+    # via prefect
+python-slugify==8.0.4
+    # via prefect
 pytz==2024.2
-    # via pandas
+    # via
+    #   croniter
+    #   dateparser
+    #   pandas
+    #   prefect
 pyyaml==6.0.2
-    # via mlflow-skinny
+    # via
+    #   apprise
+    #   kubernetes
+    #   mlflow-skinny
+    #   prefect
+readchar==4.2.0
+    # via prefect
+referencing==0.35.1
+    # via
+    #   jsonschema
+    #   jsonschema-specifications
+regex==2024.9.11
+    # via dateparser
 requests==2.32.3
     # via
+    #   apprise
     #   databricks-sdk
     #   docker
     #   kagglehub
+    #   kubernetes
     #   mlflow-skinny
+    #   requests-oauthlib
+requests-oauthlib==2.0.0
+    # via
+    #   apprise
+    #   kubernetes
+rfc3339-validator==0.1.4
+    # via prefect
+rich==13.9.3
+    # via
+    #   prefect
+    #   typer
+rpds-py==0.20.0
+    # via
+    #   jsonschema
+    #   referencing
 rsa==4.9
     # via google-auth
+ruamel-yaml==0.18.6
+    # via prefect
+ruamel-yaml-clib==0.2.12
+    # via ruamel-yaml
 scikit-learn==1.5.2
     # via
     #   -r requirements.in
@@ -180,43 +347,77 @@ scipy==1.14.1
     #   scikit-learn
 seaborn==0.13.2
     # via -r requirements.in
+shellingham==1.5.4
+    # via typer
 six==1.16.0
-    # via python-dateutil
+    # via
+    #   kubernetes
+    #   python-dateutil
+    #   rfc3339-validator
 smmap==5.0.1
     # via gitdb
 sniffio==1.3.1
-    # via anyio
-sqlalchemy==2.0.36
+    # via
+    #   anyio
+    #   asgi-lifespan
+    #   httpx
+    #   prefect
+sqlalchemy[asyncio]==2.0.36
     # via
     #   alembic
     #   mlflow
+    #   prefect
 sqlparse==0.5.1
     # via mlflow-skinny
 starlette==0.27.0
     # via fastapi
 tabulate==0.9.0
     # via -r requirements.in
+text-unidecode==1.3
+    # via python-slugify
 threadpoolctl==3.5.0
     # via scikit-learn
+time-machine==2.16.0
+    # via pendulum
+toml==0.10.2
+    # via prefect
 tqdm==4.66.5
     # via kagglehub
+typer==0.12.5
+    # via prefect
 typing-extensions==4.12.2
     # via
+    #   aiosqlite
     #   alembic
     #   fastapi
     #   graphene
     #   opentelemetry-sdk
+    #   prefect
     #   pydantic
     #   pydantic-core
     #   sqlalchemy
+    #   typer
 tzdata==2024.2
-    # via pandas
+    # via
+    #   pandas
+    #   pendulum
+tzlocal==5.2
+    # via dateparser
+ujson==5.10.0
+    # via prefect
 urllib3==2.2.3
     # via
     #   docker
+    #   kubernetes
     #   requests
 uvicorn==0.23.2
-    # via -r requirements.in
+    # via
+    #   -r requirements.in
+    #   prefect
+websocket-client==1.8.0
+    # via kubernetes
+websockets==12.0
+    # via prefect
 werkzeug==3.0.4
     # via flask
 wrapt==1.16.0
